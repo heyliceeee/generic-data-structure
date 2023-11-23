@@ -376,6 +376,36 @@ public class Main {
         doubleLinkedUnorderedList.addAfter("E", "F");
 
         System.out.println(doubleLinkedUnorderedList);
+
+
+
+        //ARRAY LINEAR SEARCH, ARRAY BINARY SEARCH
+        //ex1
+        ArraySortingAndSearching<Car> arraySortingAndSearching = new ArraySortingAndSearching<>();
+
+        Car[] stand = {
+                new Car("Toyota", "Corolla", 2022),
+                new Car("Honda", "Civic", 2021),
+                new Car("Ford", "Focus", 2020),
+                new Car("BMW", "X5", 2023),
+                new Car("Tesla", "Model 3", 2023)
+        };
+
+        boolean foundCarlinearSearch = arraySortingAndSearching.linearSearch(stand, 0, 4, new Car("", "X5", 0));
+
+        if (foundCarlinearSearch) {
+            System.out.println("Carro encontrado!");
+        } else {
+            System.out.println("Carro não encontrado.");
+        }
+
+        boolean foundCarbinarySearch = arraySortingAndSearching.binarySearch(stand, 0, 4, new Car("", "X5", 0));
+
+        if (foundCarbinarySearch) {
+            System.out.println("Carro encontrado!");
+        } else {
+            System.out.println("Carro não encontrado.");
+        }
     }
 
 
