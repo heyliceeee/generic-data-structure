@@ -1,9 +1,7 @@
 package org.example;
 
-import org.example.structures.ArrayStack;
-import org.example.structures.DoublyLinkedList;
-import org.example.structures.LinkedList;
-import org.example.structures.LinkedStack;
+import org.example.interfaces.QueueADT;
+import org.example.structures.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -122,6 +120,7 @@ public class Main {
         listDoubly.print();
 
 
+
         //ARRAY STACK, LINKED STACK
         //ex1
         ArrayStack<String> arrayStack = new ArrayStack<>();
@@ -168,6 +167,161 @@ public class Main {
 
         //postfix - linkedstack
         System.out.println(evaluate_linkedstack("7 4 -3 * 1 5 + / *"));
+
+
+        //LINKED QUEUE, CIRCULAR ARRAY QUEUE, ORDER QUEUE, QUEUE W/ 2 STACKS
+        //ex1 - linked queue
+        LinkedQueue<String> queue = new LinkedQueue<>();
+
+        queue.enqueue("a");
+        queue.enqueue("b");
+        queue.enqueue("c");
+        queue.enqueue("d");
+        queue.enqueue("e");
+
+        System.out.println(queue);
+
+        System.out.println("Elemento removido: " + queue.dequeue());
+
+        System.out.println(queue);
+
+
+        //ex2 - circular array queue
+        CircularArrayQueue<String> circularArray = new CircularArrayQueue<>();
+
+        circularArray.enqueue("a");
+        circularArray.enqueue("b");
+        circularArray.enqueue("c");
+        circularArray.enqueue("d");
+        circularArray.enqueue("e");
+
+        System.out.println(circularArray);
+
+        System.out.println("Elemento removido: " + circularArray.dequeue());
+
+        System.out.println(circularArray);
+
+
+        //ex3 - expandCapacity() e isFull()
+
+
+        //ex4
+        CircularArrayQueue<Character> circularArray1 = new CircularArrayQueue<>();
+
+        String key = "317425317 42 53174";
+        String message = "knowledge is power";
+        String[] keyNumbers = key.split(" ");
+
+        for(String number: keyNumbers)
+        {
+            for(char c : number.toCharArray())
+            {
+                circularArray1.enqueue(c);
+            }
+        }
+
+        StringBuilder msgCodificada = new StringBuilder();
+
+        for(char c : message.toCharArray())
+        {
+            if(Character.isLetter(c))
+            {
+                char keyNumber = circularArray1.dequeue();
+                int shift = Character.getNumericValue(keyNumber) - 1;
+                char codificado = (char) (c + shift);
+
+                msgCodificada.append(codificado);
+                circularArray1.enqueue(keyNumber);
+            }
+            else
+            {
+                msgCodificada.append(c);
+            }
+        }
+
+        System.out.println("msg codificada: " + msgCodificada);
+
+        //parte II
+        //ex1
+        //  circular array - FIFO, circularidade
+        //  array stack - LIFO
+
+
+        //ex2
+        // BIG O dequeue:
+        //  - array queue: O(1)
+        //  - array circular queue: O(1)
+        //  - linked list queue: O(1)
+
+
+        //ex3 - order queue
+        OrderedQueue<Character> orderedQueue = new OrderedQueue<>();
+
+        orderedQueue.enqueue('R');
+        orderedQueue.enqueue('F');
+        orderedQueue.enqueue('M');
+        orderedQueue.enqueue('T');
+        orderedQueue.enqueue('A');
+        orderedQueue.enqueue('Z');
+        orderedQueue.enqueue('H');
+        orderedQueue.enqueue('V');
+        orderedQueue.enqueue('L');
+        orderedQueue.enqueue('X');
+        orderedQueue.enqueue('G');
+        orderedQueue.enqueue('N');
+        orderedQueue.enqueue('D');
+        orderedQueue.enqueue('Q');
+        orderedQueue.enqueue('K');
+        orderedQueue.enqueue('O');
+        orderedQueue.enqueue('E');
+        orderedQueue.enqueue('C');
+        orderedQueue.enqueue('I');
+        orderedQueue.enqueue('B');
+        orderedQueue.enqueue('W');
+        orderedQueue.enqueue('Y');
+
+        System.out.println(orderedQueue);
+
+
+        OrderedQueue<Character> queue1 = new OrderedQueue<>();
+
+        queue1.enqueue('J');
+        queue1.enqueue('P');
+        queue1.enqueue('S');
+        queue1.enqueue('U');
+
+        System.out.println(queue1);
+
+
+        OrderedQueue<Character> mergeQueues = new OrderedQueue<>();
+        QueueADT<Character> merge = mergeQueues.merge(orderedQueue, queue1);
+
+        // Imprima a queue resultante
+        System.out.println("queue merge ordenada:");
+
+        while (!merge.isEmpty()) //enquanto a queue não estiver vazia
+        {
+            System.out.print(merge.dequeue() + " ");
+        }
+
+
+        //ex4 - queue with 2 stacks
+        QueueWithTwoStacks<String> queueWithTwoStacks = new QueueWithTwoStacks<>();
+
+        queueWithTwoStacks.enqueue("1");
+        queueWithTwoStacks.enqueue("2");
+        queueWithTwoStacks.enqueue("3");
+
+        System.out.println("Front of the queue: " + queueWithTwoStacks.first());
+
+        System.out.println("Dequeue: " + queueWithTwoStacks.dequeue());
+        System.out.println("Dequeue: " + queueWithTwoStacks.dequeue());
+
+        queueWithTwoStacks.enqueue("4");
+
+        System.out.println("Front of the queue: " + queueWithTwoStacks.first());
+        System.out.println("Dequeue: " + queueWithTwoStacks.dequeue());
+        System.out.println("Dequeue: " + queueWithTwoStacks.dequeue());
     }
 
 
