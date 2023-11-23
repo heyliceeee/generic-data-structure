@@ -406,6 +406,40 @@ public class Main {
         } else {
             System.out.println("Carro não encontrado.");
         }
+
+
+
+        //LINKED LIST LINEAR SEARCH, LINKED LIST BINARY SEARCH
+        //ex2
+        LinkedListSortingAndSearching<Car> linkedlistSortingAndSearching = new LinkedListSortingAndSearching<>();
+
+        LinkedListNode<Car> head = new LinkedListNode<>(new Car("Toyota", "Corolla", 2022));
+        LinkedListNode<Car> node2 = new LinkedListNode<>(new Car("Honda", "Civic", 2021));
+        LinkedListNode<Car> node3 = new LinkedListNode<>(new Car("Ford", "Focus", 2020));
+        LinkedListNode<Car> node4 = new LinkedListNode<>(new Car("BMW", "X5", 2023));
+        LinkedListNode<Car> node5 = new LinkedListNode<>(new Car("Tesla", "Model 3", 2023));
+
+        head.setNext(node2);
+        node2.setNext(node3);
+        node3.setNext(node4);
+        node4.setNext(node5);
+
+        boolean linkedListLinearSearch = linkedlistSortingAndSearching.linearSearch(head, new Car("Ford", "Focus", 2020));
+
+        if (linkedListLinearSearch) {
+            System.out.println("Carro encontrado!");
+        } else {
+            System.out.println("Carro não encontrado.");
+        }
+
+
+        boolean linkedListBinarySearch = linkedlistSortingAndSearching.binarySearch(head, new Car("Ford", "Focus", 2020));
+
+        if (linkedListBinarySearch) {
+            System.out.println("Carro encontrado!");
+        } else {
+            System.out.println("Carro não encontrado.");
+        }
     }
 
 
