@@ -1,7 +1,9 @@
 package org.example;
 
+import org.example.structures.ArrayStack;
 import org.example.structures.DoublyLinkedList;
 import org.example.structures.LinkedList;
+import org.example.structures.LinkedStack;
 
 public class Main {
     public static void main(String[] args) {
@@ -118,5 +120,135 @@ public class Main {
         listDoubly.removeDuplicateElements("a");
 
         listDoubly.print();
+
+
+        //ARRAY STACK, LINKED STACK
+        //ex1
+        ArrayStack<String> arrayStack = new ArrayStack<>();
+
+        arrayStack.push("A");
+        arrayStack.push("B");
+        arrayStack.push("C");
+        arrayStack.push("D");
+        System.out.println(arrayStack.peek());
+        System.out.println(arrayStack);
+        System.out.println(arrayStack.size()+ "\n");
+
+        arrayStack.push("E");
+        System.out.println(arrayStack.peek());
+        System.out.println(arrayStack);
+        System.out.println(arrayStack.size()+ "\n");
+
+        arrayStack.pop();
+        System.out.println(arrayStack.peek());
+        System.out.println(arrayStack);
+        System.out.println(arrayStack.size()+ "\n");
+
+
+
+        //ex2, ex3 e ex4
+        LinkedStack<String> linkedStack = new LinkedStack<>();
+
+        linkedStack.push("A");
+        linkedStack.push("B");
+        linkedStack.push("C");
+        linkedStack.push("D");
+        linkedStack.push("E");
+        System.out.println(linkedStack.peek());
+        System.out.println(linkedStack);
+        System.out.println(linkedStack.size()+ "\n");
+
+        linkedStack.pop();
+        System.out.println(linkedStack.peek());
+        System.out.println(linkedStack);
+        System.out.println(linkedStack.size()+ "\n");
+
+        //postfix - arraystack
+        System.out.println(evaluate_arraystack("7 4 -3 * 1 5 + / *"));
+
+        //postfix - linkedstack
+        System.out.println(evaluate_linkedstack("7 4 -3 * 1 5 + / *"));
+    }
+
+
+    private static double evaluate_arraystack(String s)
+    {
+        ArrayStack<Double> arrayStack = new ArrayStack<>();
+        String[] tokens = s.split("\\s+");
+
+        for(String token : tokens)
+        {
+            if("+-*/".contains(token))
+            {
+                double op2 = arrayStack.pop();
+                double op1 = arrayStack.pop();
+
+                switch (token)
+                {
+                    case "+":
+                        arrayStack.push(op1 + op2);
+                        break;
+
+                    case "-":
+                        arrayStack.push(op1 - op2);
+                        break;
+
+                    case "*":
+                        arrayStack.push(op1 * op2);
+                        break;
+
+                    case "/":
+                        arrayStack.push(op1 / op2);
+                        break;
+                }
+            }
+            else
+            {
+                arrayStack.push(Double.parseDouble(token));
+            }
+        }
+
+        return arrayStack.pop();
+    }
+
+
+    private static double evaluate_linkedstack(String s)
+    {
+        LinkedStack<Double> linkedStack = new LinkedStack<>();
+        String[] tokens = s.split("\\s+");
+
+        for(String token : tokens)
+        {
+            if("+-*/".contains(token))
+            {
+                double op2 = linkedStack.pop();
+                double op1 = linkedStack.pop();
+
+                switch (token)
+                {
+                    case "+":
+                        linkedStack.push(op1 + op2);
+                        break;
+
+                    case "-":
+                        linkedStack.push(op1 - op2);
+                        break;
+
+                    case "*":
+                        linkedStack.push(op1 * op2);
+                        break;
+
+                    case "/":
+                        linkedStack.push(op1 / op2);
+                        break;
+                }
+            }
+            else
+            {
+                linkedStack.push(Double.parseDouble(token));
+            }
+        }
+
+        return linkedStack.pop();
     }
 }
