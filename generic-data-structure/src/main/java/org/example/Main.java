@@ -515,6 +515,38 @@ public class Main {
         for (Car carro : stand) {
             System.out.println(carro);
         }
+
+
+
+        //LINKED LIST SELECTION SORT, LINKED LIST INSERTION SORT, LINKED LIST BUBBLE SORT, LINKED LIST QUICK SORT, LINKED LIST MERGE SORT
+        //ex3
+        System.out.println("Lista antes da ordenação:");
+        printLinkedList(head);
+
+        linkedlistSortingAndSearching.selectionSort(head);
+
+        System.out.println("\nLista após o Selection Sort:");
+        printLinkedList(head);
+
+
+        //LinkedListSortingAndSearching.insertionSort(head);
+
+        System.out.println("\nLista após o INSERTION Sort:");
+        printLinkedList(head);
+
+
+
+        //LinkedListSortingAndSearching.bubbleSort(head);
+
+        System.out.println("\nLista após o BUBBLE Sort:");
+        printLinkedList(head);
+
+
+
+        LinkedListSortingAndSearching.quickSort(head, node5);
+
+        System.out.println("\nLista após o QUICK Sort:");
+        printLinkedList(head);
     }
 
 
@@ -597,5 +629,14 @@ public class Main {
         }
 
         return linkedStack.pop();
+    }
+
+    public static void printLinkedList(LinkedListNode<Car> head) {
+        LinkedListNode<Car> current = head;
+        while (current != null) {
+            System.out.print(current.getElement() + " ");
+            current = current.getNext();
+        }
+        System.out.println();
     }
 }
