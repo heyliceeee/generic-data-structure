@@ -322,6 +322,60 @@ public class Main {
         System.out.println("Front of the queue: " + queueWithTwoStacks.first());
         System.out.println("Dequeue: " + queueWithTwoStacks.dequeue());
         System.out.println("Dequeue: " + queueWithTwoStacks.dequeue());
+
+
+
+        //ARRAY ORDERED LIST, DOUBLE LINKED ORDERED LIST, ARRAY UNORDERED LIST, DOUBLE LINKED UNORDERED LIST
+        //ex1
+        ArrayOrderedList<String> arrayOrderedList = new ArrayOrderedList<>();
+
+        arrayOrderedList.add("O");
+        arrayOrderedList.add("F");
+        arrayOrderedList.add("M");
+        arrayOrderedList.add("N");
+        arrayOrderedList.add("A");
+        arrayOrderedList.add("E");
+
+        System.out.println(arrayOrderedList);
+
+
+        //ex2
+        DoubleLinkedOrderedList<String> doubleLinkedOrderedList = new DoubleLinkedOrderedList<>();
+
+        doubleLinkedOrderedList.add("O");
+        doubleLinkedOrderedList.add("F");
+        doubleLinkedOrderedList.add("M");
+        doubleLinkedOrderedList.add("N");
+        doubleLinkedOrderedList.add("A");
+        doubleLinkedOrderedList.add("E");
+
+        System.out.println(doubleLinkedOrderedList);
+
+
+        //ex4
+        ArrayUnorderedList<String> arrayUnorderedList = new ArrayUnorderedList<>();
+
+        arrayUnorderedList.addToFront("O");
+        arrayUnorderedList.addToRear("F");
+        arrayUnorderedList.addAfter("M", "O");
+        arrayUnorderedList.addToFront("N");
+        arrayUnorderedList.addToRear("A");
+        arrayUnorderedList.addAfter("E", "F");
+
+        System.out.println(arrayUnorderedList);
+
+
+        //ex5
+        DoubleLinkedUnorderedList<String> doubleLinkedUnorderedList = new DoubleLinkedUnorderedList<>();
+
+        doubleLinkedUnorderedList.addToFront("O");
+        doubleLinkedUnorderedList.addToRear("F");
+        doubleLinkedUnorderedList.addAfter("M", "O");
+        doubleLinkedUnorderedList.addToFront("N");
+        doubleLinkedUnorderedList.addToRear("A");
+        doubleLinkedUnorderedList.addAfter("E", "F");
+
+        System.out.println(doubleLinkedUnorderedList);
     }
 
 
