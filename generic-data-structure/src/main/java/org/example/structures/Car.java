@@ -50,6 +50,6 @@ public class Car implements Comparable<Car> {
 
     @Override
     public int compareTo(Car o) {
-        return this.model.compareTo(o.getModel());
+        return this.year - o.getYear();
     }
 }

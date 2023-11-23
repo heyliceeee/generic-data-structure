@@ -440,6 +440,81 @@ public class Main {
         } else {
             System.out.println("Carro não encontrado.");
         }
+
+
+
+        //ARRAY SELECTION SORT, ARRAY INSERTION SORT, ARRAY BUBBLE SORT, ARRAY QUICK SORT, ARRAY MERGE SORT
+        //ex3
+        System.out.println("ARRAY SELECTION SORT");
+        System.out.println("Carros antes da ordenação:");
+        for (Car carro : stand) {
+            System.out.println(carro);
+        }
+
+        //ArraySortingAndSearching.selectionSort(stand);
+
+        System.out.println("\nCarros após a ordenação:");
+        for (Car carro : stand) {
+            System.out.println(carro);
+        }
+
+
+        System.out.println("ARRAY INSERTION SORT");
+        System.out.println("Carros antes da ordenação:");
+        for (Car carro : stand) {
+            System.out.println(carro);
+        }
+
+        //ArraySortingAndSearching.insertionSort(stand);
+
+        System.out.println("\nCarros após a ordenação:");
+        for (Car carro : stand) {
+            System.out.println(carro);
+        }
+
+
+        System.out.println("ARRAY BUBBLE SORT");
+        System.out.println("Carros antes da ordenação:");
+        for (Car carro : stand) {
+            System.out.println(carro);
+        }
+
+        //ArraySortingAndSearching.bubbleSort(stand);
+
+        System.out.println("\nCarros após a ordenação:");
+        for (Car carro : stand) {
+            System.out.println(carro);
+        }
+
+
+
+        System.out.println("ARRAY QUICK SORT");
+        System.out.println("Carros antes da ordenação:");
+        for (Car carro : stand) {
+            System.out.println(carro);
+        }
+
+        //ArraySortingAndSearching.quickSort(stand, 0, stand.length - 1);
+
+        System.out.println("\nCarros após a ordenação:");
+        for (Car carro : stand) {
+            System.out.println(carro);
+        }
+
+
+
+        System.out.println("ARRAY MERGE SORT");
+        System.out.println("Carros antes da ordenação:");
+        for (Car carro : stand) {
+            System.out.println(carro);
+        }
+
+        //ArraySortingAndSearching.mergeSort(stand);
+
+        System.out.println("\nCarros após a ordenação:");
+        for (Car carro : stand) {
+            System.out.println(carro);
+        }
     }
 
 
