@@ -543,7 +543,7 @@ public class Main {
 
 
 
-        LinkedListSortingAndSearching.quickSort(head, node5);
+        //LinkedListSortingAndSearching.quickSort(head, node5);
 
         System.out.println("\nLista após o QUICK Sort:");
         printLinkedList(head);
