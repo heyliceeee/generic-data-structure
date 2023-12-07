@@ -218,4 +218,13 @@ public class LinkedBinaryTree<T> implements BinaryTreeADT<T>
 
         return results.iterator();
     }
+
+
+    @Override
+    public String toString() {
+        return "LinkedBinaryTree{" +
+                "count=" + count +
+                ", root=" + root +
+                '}';
+    }
 }

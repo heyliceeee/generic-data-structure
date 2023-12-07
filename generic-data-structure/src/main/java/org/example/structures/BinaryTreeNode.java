@@ -39,4 +39,14 @@ public class BinaryTreeNode<T>
 
         return children;
     }
+
+
+    @Override
+    public String toString() {
+        return "BinaryTreeNode{" +
+                "element=" + element +
+                ", left=" + left +
+                ", right=" + right +
+                '}';
+    }
 }

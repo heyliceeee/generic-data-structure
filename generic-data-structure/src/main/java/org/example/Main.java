@@ -547,6 +547,31 @@ public class Main {
 
         System.out.println("\nLista após o QUICK Sort:");
         printLinkedList(head);
+
+
+        //LINKED BINARY SEARCH TREE
+        LinkedBinarySearchTree<Integer> linkedBinarySearchTree = new LinkedBinarySearchTree<>();
+
+        linkedBinarySearchTree.addElement(10);
+        linkedBinarySearchTree.addElement(5);
+        linkedBinarySearchTree.addElement(3);
+        linkedBinarySearchTree.addElement(7);
+        linkedBinarySearchTree.addElement(15);
+        linkedBinarySearchTree.addElement(13);
+
+        System.out.println("\n\n"+linkedBinarySearchTree);
+
+        linkedBinarySearchTree.removeElement(3);
+        System.out.println("\n"+linkedBinarySearchTree);
+
+        linkedBinarySearchTree.removeMin();
+        System.out.println("\n"+linkedBinarySearchTree);
+
+        linkedBinarySearchTree.removeAllOcurrences(15);
+        System.out.println("\n"+linkedBinarySearchTree);
+
+
+        System.out.println("\n"+linkedBinarySearchTree.findMax());
     }
 
 
