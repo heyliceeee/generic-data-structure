@@ -549,7 +549,7 @@ public class Main {
         printLinkedList(head);
 
 
-        //LINKED BINARY SEARCH TREE
+        //LINKED BINARY SEARCH TREE, ARRAY BINARY SEARCH TREE
         LinkedBinarySearchTree<Integer> linkedBinarySearchTree = new LinkedBinarySearchTree<>();
 
         linkedBinarySearchTree.addElement(10);
@@ -572,6 +572,30 @@ public class Main {
 
 
         System.out.println("\n"+linkedBinarySearchTree.findMax());
+
+
+
+        ArrayBinarySearchTree<Integer> arrayBinarySearchTree = new ArrayBinarySearchTree<>();
+
+        arrayBinarySearchTree.addElement(10);
+        arrayBinarySearchTree.addElement(5);
+        arrayBinarySearchTree.addElement(3);
+        arrayBinarySearchTree.addElement(7);
+        arrayBinarySearchTree.addElement(15);
+        arrayBinarySearchTree.addElement(13);
+
+        System.out.println("\n\n"+arrayBinarySearchTree);
+
+        arrayBinarySearchTree.removeElement(3);
+        System.out.println("\n"+arrayBinarySearchTree);
+
+        arrayBinarySearchTree.removeMin();
+        System.out.println("\n"+arrayBinarySearchTree);
+
+        arrayBinarySearchTree.removeAllOcurrences(15);
+        System.out.println("\n"+arrayBinarySearchTree);
+
+        System.out.println("\n"+arrayBinarySearchTree.findMax());
     }
 
 
