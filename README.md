@@ -44,7 +44,9 @@
 
 ## Tree
 * [x] Linked Binary Tree
+* [x] Linked Binary Search Tree
 * [x] Array Binary Tree
+* [x] Array Binary Search Tree
 
 <br>
 
@@ -53,4 +55,4 @@
 <br>
 <br>
 
-⏰ last update: 30/11/2023
+⏰ last update: 08/12/2023
