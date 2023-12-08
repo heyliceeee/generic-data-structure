@@ -39,14 +39,14 @@ public class ArrayBinarySearchTree<T> extends ArrayBinaryTree<T> implements Bina
     @Override
     public void addElement(T element)
     {
-        if(tree.length < maxIndex * 2 + 3)
+        if(tree.length < maxIndex * 2 + 3)  //verifica se o array atual está prestes a ficar cheio, expandindo-o se necessário
         {
             expandCapacity();
         }
 
         Comparable<T> tempElement = (Comparable<T>) element;
 
-        if(isEmpty())
+        if(isEmpty()) //se a árvore estiver vazia, coloca o elemento como root
         {
             tree[0] = element;
             maxIndex = 0;
@@ -56,6 +56,7 @@ public class ArrayBinarySearchTree<T> extends ArrayBinaryTree<T> implements Bina
             boolean added = false;
             int currentIndex = 0;
 
+            //percorre a árvore para encontrar a posição adequada para o novo elemento
             while (!added)
             {
                 if(tempElement.compareTo(tree[currentIndex]) < 0)
@@ -97,6 +98,7 @@ public class ArrayBinarySearchTree<T> extends ArrayBinaryTree<T> implements Bina
             }
         }
 
+        //atualiza a altura da árvore e incrementa o contador de elementos
         height = (int) (Math.log(maxIndex + 1) / Math.log(2)) + 1;
         count++;
     }
@@ -107,15 +109,16 @@ public class ArrayBinarySearchTree<T> extends ArrayBinaryTree<T> implements Bina
      */
     private void expandCapacity()
     {
-        int tam = tree.length + 1;
-        T[] temp = (T[]) (new Object[tam]);
+        int tam = tree.length + 1; //incrementa o tamanho do array em 1 unidade.
+        T[] temp = (T[]) (new Object[tam]);  //cria um novo array temporário com o novo tamanho.
 
+        //copia os elementos do array original para o novo array.
         for(int i=0; i < count; i++)
         {
             temp[i] = tree[i];
         }
 
-        tree = temp;
+        tree = temp; //atualiza a referência do array original para o novo array expandido.
     }
 
 
@@ -125,11 +128,12 @@ public class ArrayBinarySearchTree<T> extends ArrayBinaryTree<T> implements Bina
         T result = null;
         boolean found = false;
 
-        if(isEmpty())
+        if(isEmpty()) //verifica se a árvore está vazia
         {
             return result;
         }
 
+        //procura o elemento a ser removido na árvore
         for(int i=0; (i <= maxIndex) && !found; i++)
         {
             if(tree[i] != null && targetElement.equals(tree[i]))
@@ -139,24 +143,26 @@ public class ArrayBinarySearchTree<T> extends ArrayBinaryTree<T> implements Bina
 
                 try
                 {
-                    replace(i);
+                    replace(i); //chama o método replace para substituir o elemento a ser removido
 
                 } catch (EmptyCollectionException ex)
                 {
                     System.out.println(ex.getMessage());
                 }
 
-                count--;
+                count--; //decrementa o contador de elementos na árvore
             }
         }
 
 
+        //se o elemento não foi encontrado, lança uma exceção
         if(!found)
         {
             throw new EmptyCollectionException("element not found in the binary tree");
         }
 
 
+        //atualiza o índice máximo e a altura da árvore
         int temp = maxIndex;
         maxIndex = -1;
 
@@ -170,12 +176,12 @@ public class ArrayBinarySearchTree<T> extends ArrayBinaryTree<T> implements Bina
 
         height = (int) (Math.log(maxIndex + 1) / Math.log(2)) + 1;
 
-        return result;
+        return result; //retorna o elemento removido
     }
 
 
     /**
-     * substituir
+     * substituir um node removido por o seu sucessor inorder, mantendo a propriedade da arvore de pesquisa binaria
      * @param targetIndex elemento a ser substituido
      */
     protected void replace(int targetIndex)
@@ -367,9 +373,9 @@ public class ArrayBinarySearchTree<T> extends ArrayBinaryTree<T> implements Bina
     @Override
     public void removeAllOcurrences(T targetElement)
     {
-        while (contains(targetElement))
+        while (contains(targetElement)) //verifica se a árvore ainda conter o elemento alvo
         {
-            removeElement(targetElement);
+            removeElement(targetElement); //se sim, remove o elemento alvo
         }
     }
 
@@ -379,13 +385,13 @@ public class ArrayBinarySearchTree<T> extends ArrayBinaryTree<T> implements Bina
     {
         T result = null;
 
-        if (findMin() != null)
+        if (findMin() != null) //se existe um elemento menor
         {
-            result = removeElement(findMin());
+            result = removeElement(findMin()); //remove o elemento menor
         }
 
 
-        return result;
+        return result; //retorna o elemento
     }
 
 
@@ -394,13 +400,13 @@ public class ArrayBinarySearchTree<T> extends ArrayBinaryTree<T> implements Bina
     {
         T result = null;
 
-        if (findMax() != null)
+        if (findMax() != null) //se existe um elemento maior
         {
-            result = removeElement(findMax());
+            result = removeElement(findMax()); //remove o elemento maior
         }
 
 
-        return result;
+        return result; //retorna o elemento
     }
 
 
@@ -414,13 +420,14 @@ public class ArrayBinarySearchTree<T> extends ArrayBinaryTree<T> implements Bina
 
         int currentIndex = 0;
 
+        //enquanto houver um filho à esquerda, continua descendo a árvore
         while (tree[currentIndex * 2 + 1] != null)
         {
             currentIndex = currentIndex * 2 + 1;
         }
 
 
-        return tree[currentIndex];
+        return tree[currentIndex]; //quando não houver mais filho à esquerda, chegou ao menor elemento
     }
 
 
@@ -434,13 +441,14 @@ public class ArrayBinarySearchTree<T> extends ArrayBinaryTree<T> implements Bina
 
         int currentIndex = 0;
 
+        //enquanto houver um filho à direita, continua descendo a árvore
         while (tree[currentIndex * 2 + 2] != null)
         {
             currentIndex = currentIndex * 2 + 2;
         }
 
 
-        return tree[currentIndex];
+        return tree[currentIndex]; //quando não houver mais filho à direita, chegou ao maior elemento
     }
 
 

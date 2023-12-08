@@ -214,7 +214,6 @@ public class LinkedBinarySearchTree<T> extends LinkedBinaryTree<T> implements Bi
     {
         T result = null;
 
-
         if(findMin() != null)
         {
             result = removeElement(findMin());
@@ -228,7 +227,6 @@ public class LinkedBinarySearchTree<T> extends LinkedBinaryTree<T> implements Bi
     public T removeMax()
     {
         T result = null;
-
 
         if(findMax() != null)
         {
