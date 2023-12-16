@@ -596,6 +596,22 @@ public class Main {
         System.out.println("\n"+arrayBinarySearchTree);
 
         System.out.println("\n"+arrayBinarySearchTree.findMax());
+
+
+        //ARRAY HEAP
+        ArrayHeap<Integer> arrayHeap = new ArrayHeap<>();
+
+        arrayHeap.addElement(3);
+        arrayHeap.addElement(4);
+        arrayHeap.addElement(5);
+        arrayHeap.addElement(6);
+        arrayHeap.addElement(7);
+        arrayHeap.addElement(8);
+        arrayHeap.addElement(9);
+
+        System.out.println("\n\n"+arrayHeap);
+
+        System.out.println("\n"+arrayHeap.removeMin());
     }
 
 
