@@ -12,6 +12,7 @@
 * [ ] Linked List Bubble Sort
 * [ ] Linked List Quick Sort
 * [ ] Linked List Merge Sort
+* [x] Linked Heap
   
 <br>
 
@@ -26,6 +27,7 @@
 * [x] Circular Array Queue
 * [x] Order Queue
 * [x] Queue with 2 stacks
+* [x] Priority Queue
 
 <br>
 
@@ -39,6 +41,7 @@
 * [x] Array Bubble Sort
 * [x] Array Quick Sort
 * [x] Array Merge Sort
+* [x] Array Heap
 
 <br>
 
