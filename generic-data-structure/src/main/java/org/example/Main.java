@@ -629,6 +629,23 @@ public class Main {
         System.out.println("\n\n"+priorityQueue);
 
         System.out.println("\n"+priorityQueue.removeNext());
+
+
+        //LINKED HEAP
+        LinkedHeap<Integer> linkedHeap = new LinkedHeap<>();
+
+        linkedHeap.addElement(3);
+        linkedHeap.addElement(4);
+        linkedHeap.addElement(5);
+        linkedHeap.addElement(6);
+        linkedHeap.addElement(7);
+        linkedHeap.addElement(8);
+        linkedHeap.addElement(9);
+
+        System.out.println("\n\n"+linkedHeap);
+
+        System.out.println("\n"+linkedHeap.removeMin());
+
     }
 
 
