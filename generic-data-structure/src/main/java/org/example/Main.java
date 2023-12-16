@@ -612,6 +612,23 @@ public class Main {
         System.out.println("\n\n"+arrayHeap);
 
         System.out.println("\n"+arrayHeap.removeMin());
+
+
+
+        //PRIORITY QUEUE
+        PriorityQueue<Integer> priorityQueue = new PriorityQueue<>();
+
+        priorityQueue.addElement(3, 7);
+        priorityQueue.addElement(4, 5);
+        priorityQueue.addElement(5, 2);
+        priorityQueue.addElement(6, 1);
+        priorityQueue.addElement(7, 3);
+        priorityQueue.addElement(8, 6);
+        priorityQueue.addElement(9, 4);
+
+        System.out.println("\n\n"+priorityQueue);
+
+        System.out.println("\n"+priorityQueue.removeNext());
     }
 
 
