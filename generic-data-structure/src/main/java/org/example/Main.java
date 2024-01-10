@@ -3,6 +3,8 @@ package org.example;
 import org.example.interfaces.QueueADT;
 import org.example.structures.*;
 
+import java.util.Iterator;
+
 public class Main {
     public static void main(String[] args) {
         // LINKED LIST, SENTINEL LIST & DOUBLY LIST
@@ -646,6 +648,38 @@ public class Main {
 
         System.out.println("\n"+linkedHeap.removeMin());
 
+
+        //UNWEIGHTED GRAPH USING AN ADJACENT MATRIX
+        Graph<Integer> graph = new Graph<>();
+
+        graph.addVertex(0);
+        graph.addVertex(1);
+        graph.addVertex(2);
+        graph.addVertex(3);
+        graph.addVertex(4);
+        graph.addVertex(5);
+
+        graph.addEdge(0, 1);
+        graph.addEdge(0, 2);
+        graph.addEdge(1, 3);
+        graph.addEdge(2, 4);
+        graph.addEdge(2, 5);
+
+        System.out.println("Travessia em Largura (BFS):");
+        Iterator<Integer> bfsIterator = graph.iteratorBFS(0);
+
+        while (bfsIterator.hasNext())
+        {
+            System.out.print(bfsIterator.next() + " ");
+        }
+
+        System.out.println("\n\nTravessia em Profundidade (DFS):");
+        Iterator<Integer> dfsIterator = graph.iteratorDFS(0);
+        
+        while (dfsIterator.hasNext())
+        {
+            System.out.print(dfsIterator.next() + " ");
+        }
     }
 
 

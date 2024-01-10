@@ -5,7 +5,7 @@ import org.example.interfaces.UnorderedListADT;
 
 import java.util.Iterator;
 
-public class DoubleLinkedUnorderedList<T extends Comparable> extends DoublyLinkedList<T> implements UnorderedListADT<T>
+public class DoubleLinkedUnorderedList<T> extends DoublyLinkedList<T> implements UnorderedListADT<T>
 {
     public DoubleLinkedUnorderedList()
     {
