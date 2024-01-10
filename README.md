@@ -54,8 +54,11 @@
 <br>
 
 ## Graph
+* [x] Unweighted Graph using an Adjacency Matrix
+* [] Weighted Graph using an Adjacency Matrix
+* [] Unweighted Graph using an Adjacency List
 
 <br>
 <br>
 
-⏰ last update: 16/12/2023
+⏰ last update: 10/01/2024
