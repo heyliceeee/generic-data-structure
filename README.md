@@ -55,8 +55,6 @@
 
 ## Graph
 * [x] Unweighted Graph using an Adjacency Matrix
-* [] Weighted Graph using an Adjacency Matrix
-* [] Unweighted Graph using an Adjacency List
 
 <br>
 <br>
